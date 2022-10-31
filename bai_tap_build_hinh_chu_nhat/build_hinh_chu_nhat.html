@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Build_chu_nhat</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500px" height="400px" style="border: 1px solid #d3d3d3;"></canvas>
+<script>
+    function Rectange(w, h) {
+        this.weigh = w;
+        this.height = h;
+        this.setWeigh = function (w) {
+            this.weigh = w;
+        }
+        this.setHeight = function (h) {
+            this.height = h;
+        }
+        this.getWeigh = function () {
+            return this.weigh;
+        }
+        this.getHeight = function () {
+            return this.height;
+        }
+        this.getArea = function () {
+            return this.getWeigh() * this.getHeight();
+        }
+        this.getPerimeter = function () {
+            return (this.getWeigh() + this.getHeight()) * 2;
+        }
+
+        this.draw = function () {
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.rect(0, 0, this.getWeigh(), this.getHeight());
+            ctx.stroke();
+        }
+
+    }
+
+    let rectangle1 = new Rectange();
+    rectangle1.setWeigh(100);
+    rectangle1.setHeight(100);
+    rectangle1.draw();
+    alert(rectangle1.getArea());
+    alert(rectangle1.getPerimeter());
+
+
+</script>
+</body>
+</html>

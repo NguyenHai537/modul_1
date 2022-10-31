@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Build_Class_Tem</title>
+</head>
+<body>
+<script>
+    function Temperature (c){
+        this.Tem = c;
+        this.setTem = function (c){
+            this.Tem = c;
+        }
+        this.getTem = function (){
+            return this.Tem;
+        }
+        this.getCchangeF = function (){
+            return this.Tem * 9 / 5 + 32;
+        }
+        this.getCchangeKenvin = function (){
+            return this.Tem + 273;
+        }
+    }
+    let temperature1 = new Temperature(32);
+    temperature1.setTem(25)
+    alert(temperature1.getCchangeF() + " độ F");
+    alert(temperature1.getCchangeKenvin() + " độ Kenvin");
+
+
+</script>
+</body>
+</html>
